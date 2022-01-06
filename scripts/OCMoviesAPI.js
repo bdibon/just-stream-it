@@ -34,5 +34,3 @@ export async function getMovieDetails(id) {
   const movieDetails = response.data;
   return movieDetails;
 }
-
-getMovieDetails(8571428).then((movie) => console.log(movie));

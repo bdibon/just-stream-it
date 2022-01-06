@@ -1,0 +1,48 @@
+@use "sass:color";
+
+.nav {
+  padding: 10px 0;
+  padding-left: 60px;
+  &__list {
+    list-style-type: none;
+  }
+  &__item {
+    float: left;
+    margin-right: 18px;
+  }
+  &__link {
+    color: color.scale($color-emphase, $lightness: 30%);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration: none;
+    &--active {
+      color: $color-emphase;
+    }
+    &:hover {
+      color: color.scale($color-emphase, $lightness: 50%);
+    }
+  }
+  @media screen and (max-width: 400px) {
+    background-color: #ebe2d1;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 46px;
+    min-width: 280px;
+    padding-left: 0;
+    &__list {
+      margin: 0 auto;
+      text-align: center;
+    }
+    &__item {
+      float: none;
+      margin: 5px 0;
+    }
+  }
+  &--mobile-hidden {
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+  }
+}

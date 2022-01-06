@@ -4,19 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>JustStreamIt</title>
+    <title>JustStreamIt - Your favorite film rating</title>
   </head>
   <body>
     <header class="header">
-      <h1 class="header__brand-name">JustStreamIt</h1>
-      <nav class="header__navbar">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Categories</a></li>
+      <a href="#">
+        <img
+          class="header__logo"
+          src="/images/brand-logo.png"
+          alt="Just Stream It logo"
+        />
+      </a>
+      <nav class="nav nav--mobile-hidden">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="#">Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Categories</a>
+          </li>
         </ul>
       </nav>
+      <img
+        class="hamburger-icon"
+        src="/images/hamburger-icon.svg"
+        alt="Menu icon"
+      />
     </header>
-    <script type="module" src="/scripts/OCMoviesAPI.js"></script>
+    <script type="module" src="/scripts/main.js"></script>
   </body>
 </html>

@@ -44,7 +44,8 @@ h1 {
    * 2. Show the overflow in Edge and IE.
    */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -81,7 +82,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -187,9 +189,9 @@ select {
    * Correct the inability to style clickable types in iOS and Safari.
    */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -197,9 +199,9 @@ button,
    * Remove the inner border and padding in Firefox.
    */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -208,9 +210,9 @@ button::-moz-focus-inner,
    * Restore the focus styles unset by the previous rule.
    */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -228,7 +230,8 @@ fieldset {
    *    `fieldset` elements in all browsers.
    */
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -260,9 +263,10 @@ textarea {
    * 1. Add the correct box sizing in IE 10.
    * 2. Remove the padding in IE 10.
    */
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -271,8 +275,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -280,7 +284,7 @@ textarea {
    * 1. Correct the odd appearance in Chrome and Safari.
    * 2. Correct the outline style in Safari.
    */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -290,7 +294,7 @@ textarea {
 /**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -342,7 +346,8 @@ template {
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 html {
@@ -350,7 +355,8 @@ html {
 }
 
 body {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -366,81 +372,40 @@ h1 {
 .header {
   background-color: #fff4e0;
   color: #48c2f9;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 5px 12px;
-  position: relative;
-  min-width: 280px;
+  min-width: 320px;
   width: 100%;
 }
+
 .header__logo {
   width: 160px;
 }
 
 .nav {
-  padding: 10px 0;
+  padding: 7px 0;
   padding-left: 60px;
 }
+
 .nav__list {
   list-style-type: none;
 }
+
 .nav__item {
   float: left;
   margin-right: 18px;
 }
+
 .nav__link {
-  color: #91999d;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
+  color: #48c2f9;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
   text-decoration: none;
 }
-.nav__link--active {
-  color: #646c70;
-}
+
 .nav__link:hover {
-  color: #b0b6b9;
+  color: #57869c;
 }
-@media screen and (max-width: 400px) {
-  .nav {
-    background-color: #ebe2d1;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 46px;
-    min-width: 280px;
-    padding-left: 0;
-  }
-  .nav__list {
-    margin: 0 auto;
-    text-align: center;
-  }
-  .nav__item {
-    float: none;
-    margin: 5px 0;
-  }
-}
-@media screen and (max-width: 400px) {
-  .nav--mobile-hidden {
-    display: none;
-  }
-}
-
-.hamburger-icon {
-  filter: opacity(0.7);
-  height: 30px;
-  position: absolute;
-  right: 40px;
-  width: 30px;
-  transform: translateY(3px);
-}
-@media screen and (min-width: 400px) {
-  .hamburger-icon {
-    display: none;
-  }
-}
-.hamburger-icon:hover {
-  filter: opacity(0.5);
-  cursor: pointer;
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

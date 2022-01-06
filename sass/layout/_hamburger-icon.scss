@@ -1,0 +1,15 @@
+.hamburger-icon {
+  filter: opacity(0.7);
+  height: 30px;
+  position: absolute;
+  right: 40px;
+  width: 30px;
+  transform: translateY(3px);
+  @media screen and (min-width: 400px) {
+    display: none;
+  }
+  &:hover {
+    filter: opacity(0.5);
+    cursor: pointer;
+  }
+}
