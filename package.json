@@ -8,6 +8,7 @@
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
   },
   "devDependencies": {
+    "prettier": "2.5.1",
     "sass": "^1.46.0",
     "vite": "^2.7.2"
   },
