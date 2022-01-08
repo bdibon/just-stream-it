@@ -1,0 +1,37 @@
+@use "sass:color";
+
+.best-movie {
+  @include clearfix;
+  background-color: color.scale($color-secondary, $lightness: -3%);
+  border-radius: 8px;
+  // 182px + 2 * padding
+  min-width: 222px;
+  padding: 20px;
+  text-align: center;
+  &__cover {
+    float: left;
+    margin-right: 15px;
+  }
+  &__title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  &__description {
+    text-align: justify;
+  }
+  & .btn {
+    margin: 40px 0px;
+  }
+  @media screen and (max-width: 465px) {
+    &__cover {
+      margin: 0;
+      float: none;
+    }
+    &__title {
+      margin: 20px 0px 10px;
+    }
+    & .btn {
+      margin: 10px 0px 20px;
+    }
+  }
+}

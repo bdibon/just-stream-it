@@ -363,14 +363,29 @@ h1 {
   font-size: 4rem;
 }
 
+.btn {
+  background-color: #48c2f9;
+  border-radius: 20px;
+  border: 0px;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 50px;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .header {
   background-color: #fff4e0;
   color: #48c2f9;
   display: flex;
   padding: 5px 12px;
-  position: relative;
+  position: fixed;
+  top: 0;
   min-width: 280px;
   width: 100%;
+  z-index: 99;
 }
 .header__logo {
   width: 160px;
@@ -402,7 +417,7 @@ h1 {
 }
 @media screen and (max-width: 400px) {
   .nav {
-    background-color: #ebe2d1;
+    background-color: rgba(235, 226, 209, 0.98);
     left: 0;
     position: fixed;
     right: 0;
@@ -441,6 +456,59 @@ h1 {
 .hamburger-icon:hover {
   filter: opacity(0.5);
   cursor: pointer;
+}
+
+.wrapper {
+  background-color: powderblue;
+  height: 100vh;
+  padding: 20px 30px;
+  position: absolute;
+  top: 46px;
+  width: 100%;
+}
+@media screen and (max-width: 400px) {
+  .wrapper--mobile-menu-open {
+    transform: translateY(67px);
+  }
+}
+
+.best-movie {
+  background-color: #ffefd2;
+  border-radius: 8px;
+  min-width: 222px;
+  padding: 20px;
+  text-align: center;
+}
+.best-movie::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.best-movie__cover {
+  float: left;
+  margin-right: 15px;
+}
+.best-movie__title {
+  font-size: 2.2rem;
+  text-align: center;
+}
+.best-movie__description {
+  text-align: justify;
+}
+.best-movie .btn {
+  margin: 40px 0px;
+}
+@media screen and (max-width: 465px) {
+  .best-movie__cover {
+    margin: 0;
+    float: none;
+  }
+  .best-movie__title {
+    margin: 20px 0px 10px;
+  }
+  .best-movie .btn {
+    margin: 10px 0px 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

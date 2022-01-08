@@ -1,8 +1,14 @@
 @import "./vendors/normalize";
 @import "./utils/variables";
+@import "./utils/mixins";
 @import "./base/base";
 @import "./base/typography";
+
+@import "./components/btn";
 
 @import "./layout/header";
 @import "./layout/nav";
 @import "./layout/hamburger-icon";
+@import "./layout/wrapper";
+
+@import "./pages/best-movie";

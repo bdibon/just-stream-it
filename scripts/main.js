@@ -2,17 +2,17 @@ import { getBestRatedMovies, getMovieDetails } from "./OCMoviesAPI.js";
 
 const hamburgerIcon = document.querySelector(".hamburger-icon");
 const nav = document.querySelector(".nav");
+const wrapper = document.querySelector(".wrapper");
 
 hamburgerIcon.addEventListener("click", () => {
   nav.classList.toggle("nav--mobile-hidden");
+  wrapper.classList.toggle("wrapper--mobile-menu-open");
 });
 
-getBestRatedMovies({ page_size: 1 })
-  .then((movies) => {
-    const bestRatedMovie = movies[0];
-    return bestRatedMovie.id;
-  })
-  .then((movieId) => getMovieDetails(movieId))
-  .then((movieDetails) => {
-    console.log(movieDetails);
-  });
+(async function main() {
+  const movies = await getBestRatedMovies({ page_size: 8 });
+  const [bestMovie, ...veryGoodMovies] = movies;
+
+  const bestMovieDetails = await getMovieDetails(bestMovie.id);
+  console.log(bestMovieDetails);
+})();
