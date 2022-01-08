@@ -20,7 +20,6 @@ export async function getBestRatedMovies({ page_size = 8, genre } = {}) {
     params,
   });
 
-  const data = response.data;
   const bestRatedMovies = response.data.results;
 
   return bestRatedMovies;
