@@ -1,5 +1,5 @@
 export const bestMovieHTML = (title, posterUrl, description) => `
-  <article class="best-movie">
+  <section class="best-movie">
     <img
       class="best-movie__poster"
       src="${posterUrl}"
@@ -10,5 +10,5 @@ export const bestMovieHTML = (title, posterUrl, description) => `
     <p class="best-movie__description">
       ${description}
     </p>
-  </article>
+  </section>
 `;

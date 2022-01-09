@@ -36,30 +36,85 @@ function updateMovieDetailsElement(movieDetails) {
   modalInner.appendChild(newMovieDetails);
 }
 
-(async function main() {
-  const movies = await getBestRatedMovies({ page_size: 8 });
-  const [bestMovie, ...veryGoodMovies] = movies;
-  const bestMovieDetails = await getMovieDetails(bestMovie.id);
+function Slider(slider) {
+  if (!(slider instanceof Element)) throw new Error("No slider passed in.");
 
-  console.log({ bestMovieDetails });
-  insertBestMovieElement(bestMovieDetails);
+  let current;
+  let prev;
+  let next;
 
-  const bestMovieButton = document.querySelector(".best-movie__btn");
-  bestMovieButton.addEventListener("click", () => {
-    updateMovieDetailsElement(bestMovieDetails);
-    modalOuter.classList.toggle("open");
+  const slides = slider.querySelector(".slides");
+  const prevButton = slider.querySelector(".go-to-prev");
+  const nextButton = slider.querySelector(".go-to-next");
 
-    console.dir(modalInner);
-    console.dir(closeButton);
-  });
+  function startSlider() {
+    current = slides.querySelector(".current") || slides.firstElementChild;
+    prev = current.previousElementSibling || slides.lastElementChild;
+    next = current.nextElementSibling || slides.firstElementChild;
+    console.log("current slide:", current);
+    console.log("prev slide:", prev);
+    console.log("next slide:", next);
+  }
 
-  // Things to do:
-  // 1. Dynamically populate the modal (i.e the movie-details, append/remove)
-  // 2. Create the "caroussel" component (html + css)
-  // 3. Populate it dynamically
-  // 4. Bind each item to an appropriate modal
-  // 5. Repeat X times for the categories
-  // 6. Refacto
-  // 7. README
-  // 8. DONE / test production build?! Don't forget postcss autofixer
-})();
+  function applyClasses() {
+    current.classList.add("current");
+    prev.classList.add("prev");
+    next.classList.add("next");
+  }
+
+  function move(direction) {
+    const classesToRemove = ["prev", "current", "next"];
+    prev.classList.remove(...classesToRemove);
+    current.classList.remove(...classesToRemove);
+    next.classList.remove(...classesToRemove);
+
+    if (direction === "back") {
+      [prev, current, next] = [
+        prev.previousElementSibling || slides.lastElementChild,
+        prev,
+        current,
+      ];
+    } else {
+      [prev, current, next] = [
+        current,
+        next,
+        next.nextElementSibling || slides.firstElementChild,
+      ];
+    }
+
+    applyClasses();
+  }
+
+  startSlider();
+  applyClasses();
+
+  prevButton.addEventListener("click", () => move("back"));
+  nextButton.addEventListener("click", move);
+}
+
+const bestMoviesSlider = Slider(document.querySelector(".slider"));
+
+// (async function main() {
+//   const movies = await getBestRatedMovies({ page_size: 8 });
+//   const [bestMovie, ...veryGoodMovies] = movies;
+//   const bestMovieDetails = await getMovieDetails(bestMovie.id);
+
+//   insertBestMovieElement(bestMovieDetails);
+
+//   const bestMovieButton = document.querySelector(".best-movie__btn");
+//   bestMovieButton.addEventListener("click", () => {
+//     updateMovieDetailsElement(bestMovieDetails);
+//     modalOuter.classList.toggle("open");
+//   });
+
+//   // Things to do:
+//   // 1. Dynamically populate the modal (i.e the movie-details, append/remove)
+//   // 2. Create the "caroussel" component (html + css)
+//   // 3. Populate it dynamically
+//   // 4. Bind each item to an appropriate modal
+//   // 5. Repeat X times for the categories
+//   // 6. Refacto
+//   // 7. README
+//   // 8. DONE / test production build?! Don't forget postcss autofixer
+//   // add transitions ?
+// })();
