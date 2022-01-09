@@ -1,5 +1,8 @@
 .wrapper {
+  align-items: flex-start;
   background-color: powderblue;
+  display: grid;
+  justify-items: center;
   height: 100vh;
   padding: 20px 30px;
   position: absolute;
