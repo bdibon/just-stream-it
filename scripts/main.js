@@ -1,3 +1,4 @@
+import "../sass/style.scss";
 import { getBestRatedMovies, getMovieDetails } from "./OCMoviesAPI.js";
 import { bestMovieHTML } from "./components/bestMovie.js";
 import { movieDetailsInnerHTML } from "./components/movieDetails.js";
