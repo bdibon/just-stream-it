@@ -4,7 +4,6 @@
   @include clearfix;
   background-color: color.scale($color-secondary, $lightness: -3%);
   border-radius: 8px;
-  max-width: 850px;
   // 182px + 2 * padding
   min-width: 222px;
   padding: 20px;
@@ -24,7 +23,7 @@
   & .btn {
     margin: 40px 0px;
   }
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: map-get($breakpoints, "large")) {
     &__poster {
       margin: 0;
       float: none;

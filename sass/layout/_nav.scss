@@ -23,7 +23,7 @@
       color: color.scale($color-emphase, $lightness: 50%);
     }
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: map-get($breakpoints, "small")) {
     background-color: rgb(235 226 209 / 98%);
     left: 0;
     position: fixed;
@@ -39,9 +39,7 @@
       float: none;
       margin: 5px 0;
     }
-  }
-  &--mobile-hidden {
-    @media screen and (max-width: 400px) {
+    &--mobile-hidden {
       display: none;
     }
   }

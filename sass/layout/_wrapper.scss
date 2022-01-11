@@ -1,20 +1,27 @@
 .wrapper {
   align-items: flex-start;
-  background-color: powderblue;
   display: grid;
   gap: 40px;
   grid-auto-rows: max-content;
   height: 100vh;
   justify-items: center;
-  padding: 20px 30px;
-  position: absolute;
-  top: 46px;
-  width: 100%;
-  z-index: 1;
+  margin: 46px auto 0;
+  padding: 20px 0;
+  width: 850px;
 
-  &--mobile-menu-open {
-    @media screen and (max-width: 400px) {
-      transform: translateY(67px);
+  @media screen and (max-width: map-get($breakpoints, "large")) {
+    width: 490px;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, "small")) {
+    width: 435px;
+
+    &--mobile-menu-open {
+      margin-top: 125px;
     }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, "x-small")) {
+    width: 300px;
   }
 }

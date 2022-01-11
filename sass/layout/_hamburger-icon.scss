@@ -5,7 +5,7 @@
   right: 40px;
   width: 30px;
   transform: translateY(3px);
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: map-get($breakpoints, "small")) {
     display: none;
   }
   &:hover {

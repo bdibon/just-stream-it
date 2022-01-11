@@ -1,3 +1,9 @@
 $color-primary: #48c2f9;
 $color-secondary: #fff4e0;
 $color-emphase: #646c70;
+
+$breakpoints: (
+  "large": 910px,
+  "small": 600px,
+  "x-small": 500px,
+);
