@@ -9,7 +9,7 @@ const OCMoviesAPI = axios.create({
   },
 });
 
-export async function getBestRatedMovies({ page_size = 8, genre } = {}) {
+export async function getBestRatedMovies({ page_size = 7, genre } = {}) {
   const params = {
     sort_by: "-imdb_score,-votes",
     page_size,
@@ -25,7 +25,7 @@ export async function getBestRatedMovies({ page_size = 8, genre } = {}) {
   return bestRatedMovies;
 }
 
-export async function getMovieDetails(id) {
+export async function getMovieDetails({ id }) {
   if (id === undefined)
     throw new Error("Must specify an id in order to get details.");
   const response = await OCMoviesAPI.get(`titles/${id}`);

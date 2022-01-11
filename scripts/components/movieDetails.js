@@ -1,3 +1,12 @@
+const DOLLAR = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
+const DATE = new Intl.DateTimeFormat("en-US", { dateStyle: "long" });
+
 export const movieDetailsInnerHTML = ({
   title,
   image_url,
@@ -30,7 +39,7 @@ export const movieDetailsInnerHTML = ({
             return list;
           }, "")}
         </p>
-        <p>Release date: ${date_published}</p>
+        <p>Release date: ${DATE.format(new Date(date_published))}</p>
         <p>Rated: ${rated}</p>
         <p>IMDb score: ${imdb_score}</p>
         <p>
@@ -62,12 +71,14 @@ export const movieDetailsInnerHTML = ({
           Box office:
           <ul>
             <li>Gross US: ${
-              usa_gross_income === null ? "not available" : usa_gross_income
+              usa_gross_income === null
+                ? "not available"
+                : DOLLAR.format(usa_gross_income)
             }</li>
             <li>Gross worldwide: ${
               worldwide_gross_income === null
                 ? "not available"
-                : worldwide_gross_income
+                : DOLLAR.format(worldwide_gross_income)
             }</li>
           </ul>
         </div>

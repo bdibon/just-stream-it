@@ -1,3 +1,5 @@
-export const COMEDY_GENRE = "comedy";
-export const DRAMA_GENRE = "drama";
-export const ADVENTURE_GENRE = "adventure";
+export default {
+  COMEDY_GENRE: "comedy",
+  DRAMA_GENRE: "drama",
+  ADVENTURE_GENRE: "adventure",
+};

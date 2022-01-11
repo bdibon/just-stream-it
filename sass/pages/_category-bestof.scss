@@ -1,6 +1,6 @@
 @use "sass:color";
 
-.category-top {
+.category-bestof {
   background-color: color.scale($color-secondary, $lightness: -3%);
   border-radius: 8px;
   display: grid;
@@ -11,5 +11,10 @@
   &__title {
     margin-bottom: 20px;
     padding-left: 62px;
+    text-transform: capitalize;
+  }
+
+  .slide {
+    cursor: pointer;
   }
 }
